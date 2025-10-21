@@ -67,12 +67,17 @@ export async function GET(request: NextRequest) {
     }
 
     // Get private key from environment variable
-    const privateKey = process.env.TOURNAMENT_MANAGER_PRIVATE_KEY;
+    let privateKey = process.env.TOURNAMENT_MANAGER_PRIVATE_KEY;
     if (!privateKey) {
       return NextResponse.json(
         { error: 'TOURNAMENT_MANAGER_PRIVATE_KEY not configured' },
         { status: 500 }
       );
+    }
+
+    // Ensure private key has 0x prefix
+    if (!privateKey.startsWith('0x')) {
+      privateKey = `0x${privateKey}`;
     }
 
     // Create clients
