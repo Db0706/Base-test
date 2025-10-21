@@ -80,6 +80,9 @@ export async function GET(request: NextRequest) {
       privateKey = `0x${privateKey}`;
     }
 
+    console.log('Private key length:', privateKey.length);
+    console.log('Private key starts with 0x:', privateKey.startsWith('0x'));
+
     // Create clients
     const publicClient = createPublicClient({
       chain: baseSepolia,
