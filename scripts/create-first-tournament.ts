@@ -74,7 +74,7 @@ async function createFirstTournament() {
         functionName: 'currentTournamentId',
       });
 
-      if (currentTournamentId && currentTournamentId > 0n) {
+      if (currentTournamentId && currentTournamentId > BigInt(0)) {
         console.log(`⚠️  Tournament already exists! Current ID: ${currentTournamentId}`);
         return;
       }
