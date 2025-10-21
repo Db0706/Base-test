@@ -64,7 +64,7 @@ export default function Achievements() {
 
   useEffect(() => {
     if (playerAchievements) {
-      setAchievements(playerAchievements as boolean[]);
+      setAchievements(Array.from(playerAchievements));
     }
   }, [playerAchievements]);
 
@@ -88,7 +88,7 @@ export default function Achievements() {
       </div>
 
       <div className={styles.grid}>
-        {ACHIEVEMENT_DATA.map((achievement, index) => {
+        {ACHIEVEMENT_DATA.map((achievement) => {
           const unlocked = achievements[achievement.type];
 
           return (

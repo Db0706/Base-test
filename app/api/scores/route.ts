@@ -6,7 +6,7 @@ const scores: Map<string, { address: string; score: number; timestamp: number }[
 
 export async function POST(request: NextRequest) {
   try {
-    const { address, score, signature } = await request.json();
+    const { address, score } = await request.json();
 
     if (!address || typeof score !== "number") {
       return NextResponse.json(

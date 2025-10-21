@@ -94,7 +94,7 @@ export default function Game() {
       if (stored) {
         try {
           const entries = JSON.parse(stored);
-          const userEntry = entries.find((e: any) => e.address === address);
+          const userEntry = entries.find((e: { address: string; score: number }) => e.address === address);
           if (userEntry && userEntry.score > lastSavedScoreRef.current) {
             lastSavedScoreRef.current = userEntry.score;
             setHighScore(userEntry.score);

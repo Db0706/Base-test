@@ -171,10 +171,10 @@ export async function GET(request: NextRequest) {
         endsIn: `${Math.floor(timeLeft / 3600)} hours`,
       });
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error('Cron job error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }

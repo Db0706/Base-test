@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
-import { formatEther, parseEther } from "viem";
+import { formatEther } from "viem";
 import { TOURNAMENT_ABI } from "../contracts/tournamentABI";
 import { CONTRACT_ADDRESSES } from "../contracts/addresses";
 import styles from "./Tournament.module.css";
@@ -25,7 +25,7 @@ export default function Tournament() {
   const [timeLeft, setTimeLeft] = useState("");
 
   // Read current tournament ID
-  const { data: currentTournamentId, refetch: refetchTournamentId, error: tournamentIdError } = useReadContract({
+  const { data: currentTournamentId, error: tournamentIdError } = useReadContract({
     address: CONTRACT_ADDRESSES.tournament as `0x${string}`,
     abi: TOURNAMENT_ABI,
     functionName: "currentTournamentId",
@@ -149,7 +149,7 @@ export default function Tournament() {
           <h2>🏆 Tournament</h2>
         </div>
         <div className={styles.inactive}>
-          Unable to load tournament. Make sure you're connected to Base Sepolia.
+          Unable to load tournament. Make sure you&apos;re connected to Base Sepolia.
         </div>
       </div>
     );
@@ -210,7 +210,7 @@ export default function Tournament() {
       {hasEntered && (
         <div className={styles.entered}>
           <span className={styles.checkmark}>✓</span>
-          You're in! Play to compete for the prize pool!
+          You&apos;re in! Play to compete for the prize pool!
         </div>
       )}
 
