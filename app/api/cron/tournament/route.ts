@@ -75,13 +75,24 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Ensure private key has 0x prefix
-    if (!privateKey.startsWith('0x')) {
-      privateKey = `0x${privateKey}`;
+    // Clean and validate private key
+    privateKey = privateKey.trim(); // Remove any whitespace
+
+    // Remove 0x prefix if present, then add it back
+    if (privateKey.startsWith('0x')) {
+      privateKey = privateKey.slice(2);
     }
 
-    console.log('Private key length:', privateKey.length);
-    console.log('Private key starts with 0x:', privateKey.startsWith('0x'));
+    // Validate it's a valid hex string of correct length
+    if (!/^[0-9a-fA-F]{64}$/.test(privateKey)) {
+      return NextResponse.json(
+        { error: 'Invalid private key format' },
+        { status: 500 }
+      );
+    }
+
+    // Add 0x prefix
+    privateKey = `0x${privateKey}`;
 
     // Create clients
     const publicClient = createPublicClient({
