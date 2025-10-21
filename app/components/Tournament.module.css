@@ -1,0 +1,165 @@
+.tournament {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  border: 2px solid #0052FF;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  color: #000000;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.timer {
+  background: #0052FF;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: #F3F4F6;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #6B7280;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.value {
+  color: #0052FF;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.leader {
+  background: #FFF7ED;
+  border: 2px solid #FFA500;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.leaderLabel {
+  color: #000000;
+  font-weight: 600;
+}
+
+.leaderAddress {
+  color: #FFA500;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.enterButton {
+  width: 100%;
+  background: #0052FF;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.enterButton:hover:not(:disabled) {
+  background: #0045DD;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 82, 255, 0.3);
+}
+
+.enterButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.entered {
+  background: #ECFDF5;
+  border: 2px solid #10B981;
+  color: #065F46;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.checkmark {
+  color: #10B981;
+  font-size: 1.5rem;
+}
+
+.inactive {
+  background: #F3F4F6;
+  color: #6B7280;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.loading {
+  text-align: center;
+  color: #6B7280;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .tournament {
+    padding: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .enterButton {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+}

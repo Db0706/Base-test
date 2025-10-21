@@ -1,0 +1,107 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.02em;
+}
+
+.baseBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0052FF;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.walletSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.profileContainer:hover {
+  transform: scale(1.05);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 82, 255, 0.2);
+  transition: all 0.2s;
+}
+
+.avatar:hover {
+  box-shadow: 0 4px 12px rgba(0, 82, 255, 0.3);
+}
+
+.avatarInitials {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    padding: 0.75rem 1rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .baseBadge {
+    font-size: 0.625rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .avatarInitials {
+    font-size: 0.75rem;
+  }
+}

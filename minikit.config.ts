@@ -1,0 +1,39 @@
+const ROOT_URL =
+  process.env.NEXT_PUBLIC_URL ||
+  (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
+  "http://localhost:3000";
+
+/**
+ * MiniApp configuration object. Must follow the mini app manifest specification.
+ *
+ * @see {@link https://docs.base.org/mini-apps/features/manifest}
+ */
+export const minikitConfig = {
+  accountAssociation: {
+    header: "eyJmaWQiOjEzOTYxMTYsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhjY2I1ZjdFMjEzM2EwMzM4NTNEMjI0NmU3MjRBMDI3YjIyZUU2YUE1In0",
+    payload: "eyJkb21haW4iOiJiYXNlLWdhbWUudmVyY2VsLmFwcCJ9",
+    signature: "MHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwYzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxNzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjk5ZGJlYTg0NGM4ZjBjNjNmMjY4OWJiMmNjZWFmYmQ0MWQ4ZWRmOTFlYWJkYjEwMjdkYmVkMzBjNTEwZmM3NTdjMGIzMzUzOWFiOWE1MjQxNDEzZTgxYjFkMzFlODkxMzk5MmFmYjk3MWIwMzlhZmQwNThjZWIzZWE4NzM1OTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjVmMTk4MDg2YjJkYjE3MjU2NzMxYmM0NTY2NzNiOTZiY2VmMjNmNTFkMWZiYWNkZDdjNDM3OWVmNjU0NjU1NzJmMWQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwOGE3YjIyNzQ3OTcwNjUyMjNhMjI3NzY1NjI2MTc1NzQ2ODZlMmU2NzY1NzQyMjJjMjI2MzY4NjE2YzZjNjU2ZTY3NjUyMjNhMjI1NTY1NTU3MzU2NTc1ODRmNmE2NTY2MzY2MzM2MzAzMDdhNzgzNDRhNzg2NDZkNjYzNTU4NDgzNDQ5NjI0YTMzMzA0MzRiNTMzNzU1NzM2MzY3NTg0MTIyMmMyMjZmNzI2OTY3Njk2ZTIyM2EyMjY4NzQ3NDcwNzMzYTJmMmY2YjY1Nzk3MzJlNjM2ZjY5NmU2MjYxNzM2NTJlNjM2ZjZkMjIyYzIyNjM3MjZmNzM3MzRmNzI2OTY3Njk2ZTIyM2E2NjYxNmM3MzY1N2QwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA",
+  },
+  baseBuilder: {
+    allowedAddresses: [],
+  },
+  miniapp: {
+    version: "1",
+    name: "base-test-deandev10",
+    subtitle: "",
+    description: "",
+    screenshotUrls: [],
+    iconUrl: `${ROOT_URL}/icon.png`,
+    splashImageUrl: `${ROOT_URL}/splash.png`,
+    splashBackgroundColor: "#000000",
+    homeUrl: ROOT_URL,
+    webhookUrl: `${ROOT_URL}/api/webhook`,
+    primaryCategory: "utility",
+    tags: ["example"],
+    heroImageUrl: `${ROOT_URL}/hero.png`,
+    tagline: "",
+    ogTitle: "",
+    ogDescription: "",
+    ogImageUrl: `${ROOT_URL}/hero.png`,
+  },
+} as const;
